@@ -28,25 +28,52 @@
 
     </header>
 
-    <form action="">
-        <br />
+    <div class="fale-conosco">
         <h1>Fale Conosco</h1>
-        <br><br><br>
+    </div>
 
-        <label for="nome" for="nome">Nome</label><br>
-        <input type="lblnome" name="nome" id="nome" placeholder="Digite o nome completo"> <br><br>
+    <div class="container-f">
 
-        <label for="cel" for='tel'>Celular</label><br>
-        <input type="lblnome" name="cel" id="cel" placeholder="Digite o seu número"><br><br>
+        <form class="contato"> 
 
-        <label for="email" for="email">Email</label><br>
-        <input type="lblemail" name="email" id="email" placeholder="Digite o endereço de e-mail"><br><br>
+            <label class="nome" for="nome">Nome</label><br>
+            <input type="text" class="lblnome" name="nome" id="nome"
+              placeholder="Digite o nome completo" />
+           <br><br>
+          
+            <label class="cel" for="tel">Celular</label><br>
+            <input type="tel" class="lblcel" name="cel" id="cel"  placeholder="(99) 99999-9999" />
+           <br><br>
+          
+            <label class="email" for="email">Email</label><br>
+            <input type="email" class="lblemail" name="email" id="email" 
+              placeholder="Digite o endereço de e-mail" />
+           <br><br>
+          <label class="assunto">Assunto</label> <br>
+            <textarea class="textoassunto"  name="q_obs" id="q_obs" placeholder="Digite o assunto desejado" cols="65" rows="20"></textarea>
+          <br><br>
+    
+          <input  class="botao" type="submit" value="Enviar" />       
+        </form>
 
-        <label class="assunto">assunto</label><br>
-        <textarea class="textoassunto" name="q_obs" id="q_obs" placeholder="Digite o assunto desejado" cols="65" rows="20"></textarea><br><br>
-        <input type="botao" type="submit" value="enviar">
+    </div>
 
+    <footer class="rodape">
+        <div class="social-medias">
+            <p>Redes Sociais</p>
+            <div class="icons">
+                <a href="https://www.facebook.com/fabio.pires.7121/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com/fabio_hpires/" target="_blank" rel="external"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <span>Direitos reservados - Turma 8 Técnico em Informática</span>
+        </div>
 
-    </form>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/e51a80fc1e.js" crossorigin="anonymous"></script>
+
+    <script>
+        const menu = document.querySelector('.menu'); menu.addEventListener('click', function(){ this.classlist.toggle('open');});
+    </script>
 </body>
 </html>

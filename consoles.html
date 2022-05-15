@@ -27,20 +27,40 @@
         </nav>
 
     </header>
-    
-    <section>
+    <div class="consoles-txt">
         <h1>Consoles</h1>
-        <div class="console1">
+    </div>
+    <section class="container-c">
+        <div class="xbox">
             <h2>Xbox</h2>
-            <img src="imagens/xbox.webp" alt="">
+            <img src="imagens/xbox.jpg" alt="">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus obcaecati aspernatur quae quasi illum ab facere, maxime numquam ex minus repudiandae assumenda adipisci nisi ullam similique ipsa neque! Nulla, vitae!</p>
         </div>
 
-        <div class="console2">
+        <div class="ps5">
             <h2>Playstation</h2>
-            <img src="imagens/ps5.jfif" alt="">
+            <img src="imagens/ps5.jpg" alt="">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus obcaecati aspernatur quae quasi illum ab facere, maxime numquam ex minus repudiandae assumenda adipisci nisi ullam similique ipsa neque! Nulla, vitae!</p>
         </div>
+
     </section>
+
+    <footer class="rodape">
+        <div class="social-medias">
+            <p>Redes Sociais</p>
+            <div class="icons">
+                <a href="https://www.facebook.com/fabio.pires.7121/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com/fabio_hpires/" target="_blank" rel="external"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <span>Direitos reservados - Turma 8 Técnico em Informática</span>
+        </div>
+
+    <script src="https://kit.fontawesome.com/e51a80fc1e.js" crossorigin="anonymous">
+        
+    </script>
+
+    <script>
+        const menu = document.querySelector('.menu'); menu.addEventListener('click', function(){ this.classlist.toggle('open');});
+    </script>
 </body>
 </html>
