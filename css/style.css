@@ -22,11 +22,14 @@ header{
 
 
 header , a {
-    text-decoration: none;
     text-align: center;
     color: black;
 } 
  
+.logo {
+    margin:30px;
+}
+
 .logo a {
      font-size: 70px;
      color: black; 
@@ -41,6 +44,7 @@ header , a {
 
 .menu{
     text-align: center;
+    margin-bottom: 40px;
 }
 
 .menu a {
@@ -107,7 +111,7 @@ header , a {
     text-align: center;
     width: 400px;
     height: 285px;
-    background-color: var(--cor4);
+    background-color: #263645;
     border-radius: 3%;
     box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.384);
     position: relative;
@@ -116,6 +120,7 @@ header , a {
 
 .card h2{
     margin: 20px 0px 10px 0px;
+    color: white;
 }
 
 .card:hover {
@@ -369,4 +374,149 @@ header , a {
     width: 20%;
     border-radius: 5px;
     box-shadow: -3px 3px 5px  rgba(0, 0, 0, 0.219);
+}
+
+/* Responsividade */
+@media (min-width: 721px){
+    .menu2 {
+        display: none;
+    }
+}
+
+@media (max-width: 720px){
+    
+    .logo a{
+        font-size: 2.5rem;
+        align-items: center;
+    }
+    
+    .menu2 {
+        margin-bottom: 30px;
+    }
+
+    nav{
+        display: none;
+    }
+
+
+
+    .menu2{
+        font-size: 1.5rem;
+        color: black;
+        display: flex;
+        justify-content: center;
+    }
+
+    .menu2.open{
+        position: fixed;
+        z-index: 2;
+        margin-left: 2rem;
+    }
+
+    .menu2.open + nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: rgba(255, 255, 255, .9);
+        font-size: 1.2rem;
+        line-height: 2rem;
+    }
+    
+    .container{
+        height: 500px;
+        background-position: top center;
+    }
+
+    .text{
+        font-size: 1rem;
+    }
+
+    .container2{
+        height: 950px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+
+    }
+
+    .card{
+        width: 350px;
+        margin-bottom: 30px;
+        position: static;
+    }
+
+    .rodape p, a, span{
+        font-size: 1rem;
+        }
+
+    /* Games */
+
+    .section1{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        height: 100%;
+        height: 2100px;
+        position: static;
+        
+    }
+
+    .section2{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        height: 100%;
+        height: 2100px;
+        position: static;
+        
+    }
+    
+    .cards1{
+        width: 300px;
+        position: static;
+    }
+
+    /* Consoles */
+
+    .acao{
+        text-align: center;
+    }
+    .container-c{
+        width: 100%;
+        height: 1100px;
+        position: static;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .xbox{
+        position: static;
+        width: 350px;
+    }
+
+    .ps5{
+        position: static;
+        width: 350px;
+    }
+
+    /* fale-conosco */
+
+
+    .textoassunto{
+        width: 70%;
+        padding: 5px;
+        border-radius: 5px;
+        box-shadow: -3px 3px 5px  rgba(0, 0, 0, 0.219);
+    
+    }
+    
 }

@@ -16,8 +16,10 @@
     <header>
 
         <div class="logo">
-            <a href="index.html">Game Mania</a>
+            <a href="index.html">GameMania</a>
         </div>
+
+        <div class="menu2"><i class="fa-solid fa-bars"></i></div>
 
         <nav class="menu">
             <a href="index.html" class="active">Home</a>
@@ -69,8 +71,12 @@
         
     </script>
 
-    <script>
-        const menu = document.querySelector('.menu'); menu.addEventListener('click', function(){ this.classlist.toggle('open');});
-    </script>
+<script>
+
+    const menu2 = document.querySelector('.menu2');menu2.addEventListener('click', function () {this.classList.toggle('open');
+    });
+
+</script>
+
 </body>
 </html>
