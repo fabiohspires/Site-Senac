@@ -63,8 +63,8 @@ header , a {
 }
 
 .container{
-    height: 600px;
-    width: 100%;
+    min-height: 800px;
+    max-width: 100%;
     background-image: url(../imagens/controle.jpg);
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -76,12 +76,61 @@ header , a {
     box-shadow: 0 6px 7px 0  rgba(0, 0, 0, 0.384);
 }
 
-.text{
+.text-block{
+    position: relative;
+    overflow: hidden;
+}
+
+.text-block::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--cor0);
+    transform: translateX(-101%);
+    animation: enlargerblock .5s .6s both, revealblock .5s 1.1s both ;
+}
+
+.text-reveal{
     padding: 10px;
     background-color: rgba(0, 0, 0, 0.479);
     border-radius: 5px;
     color: white;
-    font-size: 40px;
+    font-size: 5rem;
+    position: relative;
+    opacity: 0;
+    animation: fadeintext 0s 1.1s both;
+}
+
+@keyframes fadeintext {
+    from{
+        opacity: 0;
+    }
+
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes revealblock {
+    from{
+        transform: translateX(0);
+    }
+
+    to{
+        transform: translateX(101%);
+    }
+}
+
+@keyframes enlargerblock {
+    from{
+        width: 0%;
+    }
+    to{ width: 100%;
+
+    }
 }
 
 .destaques {
@@ -93,9 +142,8 @@ header , a {
 }
 
 .container2{
-    width: 100%;
-    height: 300px;
-    margin-bottom: 30px;
+    max-width: 100%;
+    min-height: 300px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -105,12 +153,14 @@ header , a {
 .container2 img{
     width: 300px;
     height: 185px;
+    border-radius: 5px;
 }
 
 .card{
     text-align: center;
     width: 400px;
     height: 285px;
+    margin: 0 30px 40px 30px;
     background-color: #263645;
     border-radius: 3%;
     box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.384);
@@ -129,8 +179,8 @@ header , a {
 }
 
 .rodape{
-    width: 100%;
-    height: 100px;
+    max-width: 100%;
+    min-height: 100px;
     background-color: black;
     color: white;
     display: flex;
@@ -165,9 +215,10 @@ header , a {
 }
 
 .section1{
-    width: 100%;
-    height: 700px;
-    background-image: linear-gradient(to bottom, var(--cor2), var(--cor4));
+    max-width: 100%;
+    min-height: 700px;
+    padding: 30px;
+    background-image: linear-gradient(to bottom, var(--cor2), var(--cor3));
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -189,7 +240,7 @@ header , a {
     background-color: var(--cor4);
     text-align: center;
     padding: 30px 30px;
-    margin: 20px;
+    margin: 53px;
     border-radius: 5px;
     box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.384);
     position: relative;
@@ -200,7 +251,8 @@ header , a {
 }
 
 .cards1 img{
-    margin: 5px;
+    margin-top: 5px;
+    border-radius: 5px;
 }
 .cards1:hover {
     top:-10px; box-shadow:-5px 5px 5px rgba(0, 0, 0, 0.384)
@@ -215,13 +267,13 @@ header , a {
 }
 
 .section2{
-    width: 100%;
-    height: 700px;
+    max-width: 100%;
+    min-height: 700px;
+    padding: 30px;
     background-image: linear-gradient(to bottom, var(--cor3), var(--cor2));
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: center;
     align-items: center;
     justify-content: space-around;
     box-shadow: 0 6px 7px 0  rgba(0, 0, 0, 0.384);
@@ -232,6 +284,7 @@ header , a {
 .section2 img{
     width: 300px;
     height: 185px;
+    border-radius: 5px;
 }
 
 
@@ -247,8 +300,9 @@ header , a {
 }
 
 .container-c{
-    height: 647px;
-    width: 100%;
+    min-height: 647px;
+    max-width: 100%;
+    padding: 30px;
     background-color: var(--cor4);
     display: flex;
     flex-direction: row;
@@ -261,8 +315,9 @@ header , a {
 
 .xbox{
     text-align: center;
-    width: 700px;
-    height: 500px;
+    max-width: 700px;
+    min-height: 500px;
+    margin-bottom: 30px;
     background-color: black;
     border-radius: 5px;
     box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.384);
@@ -279,7 +334,9 @@ header , a {
 }
 
 .xbox img{
+    width: 600px;
     margin: 0 15px 15px 15px;
+    border-radius: 5px;
 }
 
 .xbox:hover {
@@ -306,7 +363,9 @@ header , a {
 }
 
 .ps5 img{
+    width: 600px;
     margin: 0 15px 15px 15px;
+    border-radius: 5px;
 }
 
 .ps5:hover {
@@ -409,7 +468,6 @@ header , a {
 
     .menu2.open{
         position: fixed;
-        z-index: 2;
         margin-left: 2rem;
     }
 
@@ -426,97 +484,30 @@ header , a {
         background: rgba(255, 255, 255, .9);
         font-size: 1.2rem;
         line-height: 2rem;
+        z-index: 2;
+    }
+
+    .text-reveal{
+        font-size: 1.5rem;
     }
     
-    .container{
-        height: 500px;
-        background-position: top center;
-    }
-
-    .text{
-        font-size: 1rem;
-    }
-
-    .container2{
-        height: 950px;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-around;
-
-    }
-
-    .card{
-        width: 350px;
-        margin-bottom: 30px;
-        position: static;
-    }
-
-    .rodape p, a, span{
-        font-size: 1rem;
-        }
-
-    /* Games */
-
-    .section1{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        height: 100%;
-        height: 2100px;
-        position: static;
-        
-    }
-
-    .section2{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        height: 100%;
-        height: 2100px;
-        position: static;
-        
-    }
+    /* CONSOLES */
     
-    .cards1{
+    .xbox img{
         width: 300px;
-        position: static;
     }
 
-    /* Consoles */
-
-    .acao{
-        text-align: center;
+    .ps5 img{
+        width: 300px;
+       
     }
-    .container-c{
-        width: 100%;
-        height: 1100px;
-        position: static;
-        display: flex;
-        flex-direction: row;
-    }
-
-    .xbox{
-        position: static;
-        width: 350px;
-    }
-
-    .ps5{
-        position: static;
-        width: 350px;
-    }
-
-    /* fale-conosco */
-
-
-    .textoassunto{
-        width: 70%;
-        padding: 5px;
-        border-radius: 5px;
-        box-shadow: -3px 3px 5px  rgba(0, 0, 0, 0.219);
-    
-    }
-    
 }
+
+
+
+
+@media (max-width: 990px) {
+    .cards1 {
+        margin: 30px;
+    }
+} 
